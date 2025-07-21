@@ -53,6 +53,73 @@
             66% { transform: translate(-20px, 20px) rotate(240deg); }
         }
 
+        /* Logo Styles */
+        .logo-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 30px;
+            gap: 20px;
+        }
+
+        .logo {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #7c3aed, #ec4899, #64c8ff);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation: logoGlow 3s ease-in-out infinite alternate;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .logo::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(45deg, #64c8ff, #7c3aed, #ec4899, #64c8ff);
+            border-radius: 22px;
+            z-index: -1;
+            animation: rotate 4s linear infinite;
+        }
+
+        .logo-text {
+            font-size: 2rem;
+            font-weight: 900;
+            color: white;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+        }
+
+        /* Alternative: Image logo placeholder */
+        .logo-img {
+            max-width: 120px;
+            max-height: 80px;
+            object-fit: contain;
+            filter: drop-shadow(0 0 10px rgba(124, 58, 237, 0.5));
+            transition: all 0.3s ease;
+        }
+
+        .logo-img:hover {
+            transform: scale(1.05);
+            filter: drop-shadow(0 0 20px rgba(236, 72, 153, 0.7));
+        }
+
+        @keyframes logoGlow {
+            from { 
+                box-shadow: 0 0 20px rgba(124, 58, 237, 0.3);
+                transform: scale(1);
+            }
+            to { 
+                box-shadow: 0 0 40px rgba(236, 72, 153, 0.6);
+                transform: scale(1.05);
+            }
+        }
+
         /* Header */
         header {
             padding: 80px 0 120px;
@@ -74,6 +141,11 @@
         @keyframes glow {
             from { filter: drop-shadow(0 0 10px rgba(124, 58, 237, 0.3)); }
             to { filter: drop-shadow(0 0 20px rgba(236, 72, 153, 0.6)); }
+        }
+
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
         }
 
         .hero-subtitle {
@@ -253,11 +325,6 @@
             z-index: -1;
         }
 
-        @keyframes rotate {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-
         .section-title {
             font-size: 2.5rem;
             font-weight: 700;
@@ -368,6 +435,16 @@
             .results-grid {
                 grid-template-columns: 1fr;
             }
+
+            .logo-container {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .logo {
+                width: 60px;
+                height: 60px;
+            }
         }
 
         /* Scroll animations */
@@ -392,6 +469,16 @@
 
     <div class="container">
         <header>
+            <div class="logo-container fade-in">
+                <!-- Option 1: Custom animated logo -->
+                <div class="logo">
+                    <span class="logo-text">MF</span>
+                </div>
+                
+                <!-- Option 2: Replace with your image logo (uncomment to use) -->
+                <!-- <img src="your-logo.png" alt="MambaFace Logo" class="logo-img"> -->
+            </div>
+            
             <h1 class="hero-title fade-in">MambaFace</h1>
             <p class="hero-subtitle fade-in">A Fast and Lightweight Model for Real-Time Speech-Driven Facial Animation</p>
             
