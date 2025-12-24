@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MambaFace: A Fast and Lightweight Model for Real-Time Speech-Driven Facial Animation</title>
+    <title>SEDTalker: Emotion-Aware 3D Facial Animation Using Frame-Level Speech Emotion Diarization</title>
     <style>
         * {
             margin: 0;
@@ -89,7 +89,7 @@
         }
 
         .logo-text {
-            font-size: 2rem;
+            font-size: 1.5rem;
             font-weight: 900;
             color: white;
             text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
@@ -271,6 +271,13 @@
             justify-content: center;
             position: relative;
             overflow: hidden;
+        }
+
+        .video-placeholder iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            border-radius: 15px;
         }
 
         .play-button {
@@ -472,14 +479,14 @@
             <div class="logo-container fade-in">
                 <!-- Option 1: Custom animated logo -->
                 <div class="logo">
-                    <span class="logo-text">MF</span>
+                    <span class="logo-text">ST</span>
                 </div>
                 
                 <!-- Option 2: Replace with your image logo (uncomment to use) -->
-                <img src="mambaface_logo.png" alt="MambaFace Logo" class="logo-img">
+                <!-- <img src="sedtalker_logo.png" alt="SEDTalker Logo" class="logo-img"> -->
             </div>
             
-            <h1 class="hero-title fade-in">MambaFace</h1>
+            <h1 class="hero-title fade-in">SEDTalker</h1>
             <p class="hero-subtitle fade-in">A Fast and Lightweight Model for Real-Time Speech-Driven Facial Animation</p>
             
             <div class="author-list fade-in">
@@ -506,9 +513,12 @@
         <div class="video-section fade-in">
             <div class="video-container">
                 <div class="video-placeholder">
-                    <div class="play-button" onclick="playVideo()">
-                        <div class="play-icon"></div>
-                    </div>
+                    <iframe 
+                        src="https://www.youtube.com/embed/nlzASMrmYBg" 
+                        title="SEDTalker Demo"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                        allowfullscreen>
+                    </iframe>
                 </div>
             </div>
         </div>
@@ -549,7 +559,7 @@
 
     <footer>
         <div class="container">
-            <p class="footer-text">© 2025 MambaFace Research Project. All rights reserved.</p>
+            <p class="footer-text">© 2025 SEDTalker Research Project. All rights reserved.</p>
         </div>
     </footer>
 
@@ -572,17 +582,6 @@
         document.querySelectorAll('.fade-in').forEach(el => {
             observer.observe(el);
         });
-
-        // Play video function
-        function playVideo() {
-            const videoContainer = document.querySelector('.video-placeholder');
-            videoContainer.innerHTML = `
-                <div style="width: 100%; height: 100%; background: linear-gradient(135deg, #7c3aed, #ec4899); 
-                           display: flex; align-items: center; justify-content: center; font-size: 1.2rem; color: white;">
-                    🎥 Video Player would load here
-                </div>
-            `;
-        }
 
         // Smooth scrolling for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
