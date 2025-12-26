@@ -320,6 +320,172 @@
             overflow: hidden;
         }
 
+        /* Emotion Diarization Section */
+        .emotion-section {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 25px;
+            padding: 50px;
+            margin: 60px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .emotion-info {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 1.1rem;
+            color: #a0a0a0;
+        }
+
+        .emotion-info p {
+            margin: 10px 0;
+        }
+
+        .timeline-container {
+            position: relative;
+            height: 60px;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+            margin: 30px 0;
+            overflow: hidden;
+        }
+
+        .timeline-segment {
+            position: absolute;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-right: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .timeline-segment:hover {
+            transform: scaleY(1.1);
+            z-index: 10;
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+        }
+
+        .segment-label {
+            color: white;
+            font-weight: bold;
+            font-size: 1.2rem;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .legend {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            margin: 30px 0;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .legend-color {
+            width: 40px;
+            height: 20px;
+            border-radius: 5px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        .stat-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        .stat-card h3 {
+            color: #64c8ff;
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+        }
+
+        .stat-card p {
+            color: #c0c0c0;
+            margin: 8px 0;
+            font-size: 0.95rem;
+        }
+
+        /* Emotion Comparison Videos */
+        .emotion-videos-section {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 25px;
+            padding: 50px;
+            margin: 60px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .emotion-videos-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .emotion-video-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .emotion-video-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        .emotion-label {
+            color: #64c8ff;
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .small-video-container {
+            position: relative;
+            aspect-ratio: 16/9;
+            background: linear-gradient(135deg, #1a1a2e, #16213e);
+            border-radius: 15px;
+            overflow: hidden;
+        }
+
+        .small-video-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            border-radius: 15px;
+        }
+
         .abstract-section::before {
             content: '';
             position: absolute;
@@ -435,7 +601,9 @@
             }
             
             .abstract-section,
-            .nav-section {
+            .nav-section,
+            .emotion-section,
+            .emotion-videos-section {
                 padding: 30px 20px;
             }
             
@@ -451,6 +619,27 @@
             .logo {
                 width: 60px;
                 height: 60px;
+            }
+
+            .timeline-segment {
+                min-width: 20px;
+            }
+
+            .segment-label {
+                font-size: 0.9rem;
+            }
+
+            .legend {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .emotion-videos-grid {
+                grid-template-columns: 1fr;
             }
         }
 
@@ -505,10 +694,17 @@
 
         <div class="nav-section fade-in">
             <div class="nav-buttons">
-                <a href="#paper" class="nav-btn">📄 Paper</a>
-                <a href="#code" class="nav-btn">💻 Code</a>
+                <a href="#paper" class="nav-btn">📄 Paper (Coming Soon)</a>
+                <a href="#code" class="nav-btn">💻 Code (Coming Soon)</a>
             </div>
         </div>
+
+        <section class="abstract-section fade-in">
+            <h2 class="section-title">Abstract</h2>
+            <p class="abstract-text">
+                
+            </p>
+        </section>
 
         <div class="video-section fade-in">
             <div class="video-container">
@@ -523,38 +719,172 @@
             </div>
         </div>
 
-        <section class="abstract-section fade-in">
-            <h2 class="section-title">Abstract</h2>
-            <p class="abstract-text">
-                
-            </p>
+        <!-- Emotion Diarization Section -->
+        <section class="emotion-section fade-in">
+            <h2 class="section-title">Speech Emotion Diarization</h2>
+            <div class="emotion-info">
+                <p><strong>File:</strong> SED/wav/test.wav</p>
+                <p><strong>Duration:</strong> 21.43 seconds</p>
+            </div>
+            
+            <!-- Timeline Visualization -->
+            <div class="timeline-container">
+                <div class="timeline-segment" style="left: 0%; width: 18.7%; background: linear-gradient(135deg, rgba(255, 99, 71, 0.8), rgba(255, 69, 0, 0.8));" title="Anger (0-4s)">
+                    <span class="segment-label">A</span>
+                </div>
+                <div class="timeline-segment" style="left: 18.7%; width: 4.58%; background: linear-gradient(135deg, rgba(255, 215, 0, 0.6), rgba(255, 193, 7, 0.6));" title="Happy (4-4.98s)">
+                    <span class="segment-label">H</span>
+                </div>
+                <div class="timeline-segment" style="left: 23.28%; width: 4.76%; background: linear-gradient(135deg, rgba(255, 215, 0, 0.8), rgba(255, 193, 7, 0.8));" title="Happy (4.98-6s)">
+                    <span class="segment-label">H</span>
+                </div>
+                <div class="timeline-segment" style="left: 28.04%; width: 4.58%; background: linear-gradient(135deg, rgba(255, 215, 0, 0.4), rgba(255, 193, 7, 0.4));" title="Happy (6-6.98s)">
+                    <span class="segment-label">H</span>
+                </div>
+                <div class="timeline-segment" style="left: 32.62%; width: 4.76%; background: linear-gradient(135deg, rgba(255, 99, 71, 0.8), rgba(255, 69, 0, 0.8));" title="Anger (6.98-8s)">
+                    <span class="segment-label">A</span>
+                </div>
+                <div class="timeline-segment" style="left: 37.38%; width: 4.58%; background: linear-gradient(135deg, rgba(255, 99, 71, 0.4), rgba(255, 69, 0, 0.4));" title="Anger (8-8.98s)">
+                    <span class="segment-label">A</span>
+                </div>
+                <div class="timeline-segment" style="left: 41.96%; width: 4.67%; background: linear-gradient(135deg, rgba(255, 215, 0, 0.8), rgba(255, 193, 7, 0.8));" title="Happy (8.98-9.98s)">
+                    <span class="segment-label">H</span>
+                </div>
+                <div class="timeline-segment" style="left: 46.63%; width: 4.67%; background: linear-gradient(135deg, rgba(255, 215, 0, 0.8), rgba(255, 193, 7, 0.8));" title="Happy (10-11s)">
+                    <span class="segment-label">H</span>
+                </div>
+                <div class="timeline-segment" style="left: 51.3%; width: 4.58%; background: linear-gradient(135deg, rgba(255, 99, 71, 0.4), rgba(255, 69, 0, 0.4));" title="Anger (11-11.98s)">
+                    <span class="segment-label">A</span>
+                </div>
+                <div class="timeline-segment" style="left: 55.88%; width: 9.44%; background: linear-gradient(135deg, rgba(255, 99, 71, 0.8), rgba(255, 69, 0, 0.8));" title="Anger (11.98-14s)">
+                    <span class="segment-label">A</span>
+                </div>
+                <div class="timeline-segment" style="left: 65.32%; width: 4.58%; background: linear-gradient(135deg, rgba(255, 99, 71, 0.4), rgba(255, 69, 0, 0.4));" title="Anger (14-14.98s)">
+                    <span class="segment-label">A</span>
+                </div>
+                <div class="timeline-segment" style="left: 69.9%; width: 4.76%; background: linear-gradient(135deg, rgba(255, 215, 0, 0.8), rgba(255, 193, 7, 0.8));" title="Happy (14.98-16s)">
+                    <span class="segment-label">H</span>
+                </div>
+                <div class="timeline-segment" style="left: 74.66%; width: 4.58%; background: linear-gradient(135deg, rgba(255, 215, 0, 0.4), rgba(255, 193, 7, 0.4));" title="Happy (16-16.98s)">
+                    <span class="segment-label">H</span>
+                </div>
+                <div class="timeline-segment" style="left: 79.24%; width: 4.76%; background: linear-gradient(135deg, rgba(255, 99, 71, 0.8), rgba(255, 69, 0, 0.8));" title="Anger (16.98-18s)">
+                    <span class="segment-label">A</span>
+                </div>
+                <div class="timeline-segment" style="left: 84%; width: 4.58%; background: linear-gradient(135deg, rgba(255, 99, 71, 0.6), rgba(255, 69, 0, 0.6));" title="Anger (18-18.98s)">
+                    <span class="segment-label">A</span>
+                </div>
+                <div class="timeline-segment" style="left: 88.58%; width: 4.58%; background: linear-gradient(135deg, rgba(255, 99, 71, 0.6), rgba(255, 69, 0, 0.6));" title="Anger (19-19.98s)">
+                    <span class="segment-label">A</span>
+                </div>
+                <div class="timeline-segment" style="left: 93.36%; width: 4.58%; background: linear-gradient(135deg, rgba(255, 99, 71, 0.6), rgba(255, 69, 0, 0.6));" title="Anger (20-20.98s)">
+                    <span class="segment-label">A</span>
+                </div>
+                <div class="timeline-segment" style="left: 97.94%; width: 2.06%; background: linear-gradient(135deg, rgba(255, 99, 71, 0.4), rgba(255, 69, 0, 0.4));" title="Anger (20.98-21.42s)">
+                    <span class="segment-label">A</span>
+                </div>
+            </div>
+            
+            <div class="legend">
+                <div class="legend-item">
+                    <span class="legend-color" style="background: linear-gradient(135deg, rgba(255, 99, 71, 0.8), rgba(255, 69, 0, 0.8));"></span>
+                    <span>Anger (High)</span>
+                </div>
+                <div class="legend-item">
+                    <span class="legend-color" style="background: linear-gradient(135deg, rgba(255, 99, 71, 0.6), rgba(255, 69, 0, 0.6));"></span>
+                    <span>Anger (Medium)</span>
+                </div>
+                <div class="legend-item">
+                    <span class="legend-color" style="background: linear-gradient(135deg, rgba(255, 99, 71, 0.4), rgba(255, 69, 0, 0.4));"></span>
+                    <span>Anger (Low)</span>
+                </div>
+                <div class="legend-item">
+                    <span class="legend-color" style="background: linear-gradient(135deg, rgba(255, 215, 0, 0.8), rgba(255, 193, 7, 0.8));"></span>
+                    <span>Happy (High)</span>
+                </div>
+                <div class="legend-item">
+                    <span class="legend-color" style="background: linear-gradient(135deg, rgba(255, 215, 0, 0.6), rgba(255, 193, 7, 0.6));"></span>
+                    <span>Happy (Medium)</span>
+                </div>
+                <div class="legend-item">
+                    <span class="legend-color" style="background: linear-gradient(135deg, rgba(255, 215, 0, 0.4), rgba(255, 193, 7, 0.4));"></span>
+                    <span>Happy (Low)</span>
+                </div>
+            </div>
+
+            <!-- Statistics -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <h3>Anger (A)</h3>
+                    <p><strong>Duration:</strong> 14.38s (67.1%)</p>
+                    <p><strong>Count:</strong> 11 segments</p>
+                    <p><strong>Avg Intensity:</strong> 70.8%</p>
+                </div>
+                <div class="stat-card">
+                    <h3>Happy (H)</h3>
+                    <p><strong>Duration:</strong> 6.98s (32.6%)</p>
+                    <p><strong>Count:</strong> 7 segments</p>
+                    <p><strong>Avg Intensity:</strong> 71.8%</p>
+                </div>
+                <div class="stat-card">
+                    <h3>High Intensity</h3>
+                    <p><strong>Duration:</strong> 12.1s (56.5%)</p>
+                    <p><strong>Segments:</strong> 8</p>
+                </div>
+                <div class="stat-card">
+                    <h3>Medium Intensity</h3>
+                    <p><strong>Duration:</strong> 3.92s (18.3%)</p>
+                    <p><strong>Segments:</strong> 4</p>
+                </div>
+                <div class="stat-card">
+                    <h3>Low Intensity</h3>
+                    <p><strong>Duration:</strong> 5.34s (24.9%)</p>
+                    <p><strong>Segments:</strong> 6</p>
+                </div>
+            </div>
         </section>
 
-        <div class="results-grid">
-            <div class="result-card fade-in">
-                <h3 class="card-title">Action Recognition</h3>
-                <p class="card-content">
-<!--                     Achieves 85.2% top-1 accuracy on UCF-101 and 54.8% on HMDB-51, 
-                    surpassing previous self-supervised methods by significant margins. -->
-                </p>
+        <!-- Emotion Comparison Videos -->
+        <section class="emotion-videos-section fade-in">
+            <h2 class="section-title">Emotion-Specific Examples</h2>
+            <div class="emotion-videos-grid">
+                <div class="emotion-video-card">
+                    <h3 class="emotion-label">Angry</h3>
+                    <div class="small-video-container">
+                        <iframe 
+                            src="https://drive.google.com/file/d/1u-2OgwxzwF6hQi2BTJH9KSufZsQeGgbq/preview" 
+                            title="Angry Emotion Demo"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                </div>
+                
+                <div class="emotion-video-card">
+                    <h3 class="emotion-label">Disgust</h3>
+                    <div class="small-video-container">
+                        <iframe 
+                            src="https://drive.google.com/file/d/1VovN6RFHkiQDFe-Ycbgam38IWVBPdhzp/preview" 
+                            title="Disgust Emotion Demo"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                </div>
+                
+                <div class="emotion-video-card">
+                    <h3 class="emotion-label">Happy</h3>
+                    <div class="small-video-container">
+                        <iframe 
+                            src="https://drive.google.com/file/d/1U934nEAM99nC28KubGvUBJ2S_jb6Mdu5/preview" 
+                            title="Happy Emotion Demo"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                </div>
             </div>
-            
-            <div class="result-card fade-in">
-                <h3 class="card-title">Video Retrieval</h3>
-                <p class="card-content">
-<!--                     Demonstrates superior performance on video-text retrieval tasks with 
-                    improved semantic understanding and temporal modeling capabilities. -->
-                </p>
-            </div>
-            
-            <div class="result-card fade-in">
-                <h3 class="card-title">Temporal Localization</h3>
-                <p class="card-content">
-<!--                     Shows robust temporal reasoning abilities for action localization 
-                    and detection in untrimmed videos across multiple benchmarks. -->
-                </p>
-            </div>
-        </div>
+        </section>
     </div>
 
     <footer>
