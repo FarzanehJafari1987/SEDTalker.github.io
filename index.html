@@ -474,7 +474,7 @@
         .small-video-container {
             position: relative;
             aspect-ratio: 16/9;
-            background: linear-gradient(135deg, #1a1a2e, #16213e);
+            background: #000000;
             border-radius: 15px;
             overflow: hidden;
         }
@@ -538,58 +538,6 @@
             text-align: justify;
         }
 
-        /* Results Grid */
-        .results-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin: 60px 0;
-        }
-
-        .result-card {
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 20px;
-            padding: 30px;
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .result-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 2px;
-            background: linear-gradient(90deg, #7c3aed, #ec4899, #64c8ff);
-            transform: translateX(-100%);
-            transition: transform 0.5s ease;
-        }
-
-        .result-card:hover::before {
-            transform: translateX(0);
-        }
-
-        .result-card:hover {
-            transform: translateY(-10px);
-            background: rgba(255, 255, 255, 0.08);
-        }
-
-        .card-title {
-            font-size: 1.4rem;
-            font-weight: 600;
-            margin-bottom: 15px;
-            color: #64c8ff;
-        }
-
-        .card-content {
-            color: #c0c0c0;
-            line-height: 1.6;
-        }
-
         /* Footer */
         footer {
             margin-top: 100px;
@@ -625,10 +573,6 @@
             .emotion-section,
             .emotion-videos-section {
                 padding: 30px 20px;
-            }
-            
-            .results-grid {
-                grid-template-columns: 1fr;
             }
 
             .logo-container {
@@ -686,13 +630,9 @@
     <div class="container">
         <header>
             <div class="logo-container fade-in">
-                <!-- Option 1: Custom animated logo -->
                 <div class="logo">
                     <span class="logo-text">ST</span>
                 </div>
-                
-                <!-- Option 2: Replace with your image logo (uncomment to use) -->
-                <!-- <img src="sedtalker_logo.png" alt="SEDTalker Logo" class="logo-img"> -->
             </div>
             
             <h1 class="hero-title fade-in">SEDTalker</h1>
@@ -730,7 +670,7 @@
             <div class="video-container">
                 <div class="video-placeholder">
                     <iframe 
-                        src="https://drive.google.com/file/d/1-NEnRzP2n8DNSBz21HQSpZP4fNoWtty1/view?usp=drive_link" 
+                        src="https://drive.google.com/file/d/1-NEnRzP2n8DNSBz21HQSpZP4fNoWtty1/preview" 
                         title="SEDTalker Demo"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                         allowfullscreen>
@@ -739,7 +679,6 @@
             </div>
         </div>
 
-        <!-- Emotion Diarization Section -->
         <section class="emotion-section fade-in">
             <h2 class="section-title">Speech Emotion Diarization</h2>
             <div class="emotion-info">
@@ -747,7 +686,6 @@
                 <p><strong>Duration:</strong> 21.43 seconds</p>
             </div>
             
-            <!-- Timeline Visualization -->
             <div class="timeline-container">
                 <div class="timeline-segment" style="left: 0%; width: 18.7%; background: linear-gradient(135deg, rgba(255, 99, 71, 0.8), rgba(255, 69, 0, 0.8));" title="Anger (0-4s)">
                     <span class="segment-label">A</span>
@@ -832,7 +770,6 @@
                 </div>
             </div>
 
-            <!-- Statistics -->
             <div class="stats-grid">
                 <div class="stat-card">
                     <h3>Anger (A)</h3>
@@ -864,16 +801,14 @@
             </div>
         </section>
 
-        <!-- Emotion Comparison Videos -->
         <section class="emotion-videos-section fade-in">
             <h2 class="section-title">Emotion-Specific Examples</h2>
             <div class="emotion-videos-grid">
                 <div class="emotion-video-card">
-                    <h3 class="emotion-label">Angry</h3>
                     <div class="small-video-container">
                         <iframe 
-                            src="https://drive.google.com/file/d/19l6sdou4a7rjb9zOxzI8KeMfY-Xi_7F-/view?usp=drive_link" 
-                            title="Angry Emotion Demo"
+                            src="https://drive.google.com/file/d/19l6sdou4a7rjb9zOxzI8KeMfY-Xi_7F-/preview" 
+                            title="Emotion Demo"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                             allowfullscreen>
                         </iframe>
@@ -884,11 +819,10 @@
                 </div>
                 
                 <div class="emotion-video-card">
-                    <h3 class="emotion-label">Disgust</h3>
                     <div class="small-video-container">
                         <iframe 
-                            src="https://drive.google.com/file/d/1XqCtLNpvmZMoXZJn-SVO_2l43URDr34J/view?usp=drive_link" 
-                            title="Disgust Emotion Demo"
+                            src="https://drive.google.com/file/d/1XqCtLNpvmZMoXZJn-SVO_2l43URDr34J/preview" 
+                            title="Emotion Demo"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                             allowfullscreen>
                         </iframe>
@@ -899,11 +833,10 @@
                 </div>
                 
                 <div class="emotion-video-card">
-                    <h3 class="emotion-label">Happy</h3>
                     <div class="small-video-container">
                         <iframe 
-                            src="https://drive.google.com/file/d/1jpStmNYEdm73rF_mMa89Jyh-Qxcgijgu/view?usp=drive_link" 
-                            title="Happy Emotion Demo"
+                            src="https://drive.google.com/file/d/1jpStmNYEdm73rF_mMa89Jyh-Qxcgijgu/preview" 
+                            title="Emotion Demo"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                             allowfullscreen>
                         </iframe>
@@ -914,11 +847,10 @@
                 </div>
                 
                 <div class="emotion-video-card">
-                    <h3 class="emotion-label">Sad</h3>
                     <div class="small-video-container">
                         <iframe 
-                            src="https://drive.google.com/file/d/18CJX6c7aXcE7C8SmtHv541_WVjNLiDA_/view?usp=drive_link" 
-                            title="Sad Emotion Demo"
+                            src="https://drive.google.com/file/d/18CJX6c7aXcE7C8SmtHv541_WVjNLiDA_/preview" 
+                            title="Emotion Demo"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                             allowfullscreen>
                         </iframe>
@@ -929,11 +861,10 @@
                 </div>
                 
                 <div class="emotion-video-card">
-                    <h3 class="emotion-label">Neutral</h3>
                     <div class="small-video-container">
                         <iframe 
-                            src="https://drive.google.com/file/d/1SZhe3HG00TXaAN1vgzJrgehxonzJIzI2/view?usp=drive_link" 
-                            title="Neutral Emotion Demo"
+                            src="https://drive.google.com/file/d/1SZhe3HG00TXaAN1vgzJrgehxonzJIzI2/preview" 
+                            title="Emotion Demo"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                             allowfullscreen>
                         </iframe>
@@ -944,11 +875,10 @@
                 </div>
                 
                 <div class="emotion-video-card">
-                    <h3 class="emotion-label">Angry</h3>
                     <div class="small-video-container">
                         <iframe 
-                            src="https://drive.google.com/file/d/11YckD9nz_v3gQQgHKqBUsgYqiva2MXTE/view?usp=drive_link" 
-                            title="Angry 1 Emotion Demo"
+                            src="https://drive.google.com/file/d/11YckD9nz_v3gQQgHKqBUsgYqiva2MXTE/preview" 
+                            title="Emotion Demo"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                             allowfullscreen>
                         </iframe>
@@ -958,12 +888,11 @@
                     </a>
                 </div>
 
-                <div class="emotion-video-card"> 
-                    <h3 class="emotion-label">Angry</h3>
+                <div class="emotion-video-card">
                     <div class="small-video-container">
                         <iframe 
-                            src="https://drive.google.com/file/d/1C8rwCaDgfVDVnzpMM_9HPNloDpf6tN2Z/view?usp=drive_link" 
-                            title="Angry 1 Emotion Demo"
+                            src="https://drive.google.com/file/d/1C8rwCaDgfVDVnzpMM_9HPNloDpf6tN2Z/preview" 
+                            title="Emotion Demo"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                             allowfullscreen>
                         </iframe>
@@ -974,11 +903,10 @@
                 </div>
 
                 <div class="emotion-video-card">
-                    <h3 class="emotion-label">Angry</h3>
                     <div class="small-video-container">
                         <iframe 
-                            src="https://drive.google.com/file/d/1FPSY76IZ3B2jcGsTtL14GUYRiVbZKNLw/view?usp=drive_link" 
-                            title="Angry 1 Emotion Demo"
+                            src="https://drive.google.com/file/d/1FPSY76IZ3B2jcGsTtL14GUYRiVbZKNLw/preview" 
+                            title="Emotion Demo"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                             allowfullscreen>
                         </iframe>
@@ -989,16 +917,15 @@
                 </div>
 
                 <div class="emotion-video-card">
-                    <h3 class="emotion-label">Angry</h3>
                     <div class="small-video-container">
                         <iframe 
-                            src="https://drive.google.com/file/d/1Uk2Aj8WW8z_OQO_1zeoTlvs6GaeeRpYl/view?usp=drive_link" 
-                            title="Angry 1 Emotion Demo"
+                            src="https://drive.google.com/file/d/1Uk2Aj8WW8z_OQO_1zeoTlvs6GaeeRpYl/preview" 
+                            title="Emotion Demo"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                             allowfullscreen>
                         </iframe>
                     </div>
-                    <a href="https://drive.google.com/file/d/1URvQK2LOvKn1GvxoVq3gs112p1fl_hY6/view?usp=drive_link" class="json-link">
+                    <a href="https://drive.google.com/file/d/1URvQK2LOvKn1GvxoVq3gs112p1fl_hY6/view?usp=drive_link" target="_blank" class="json-link">
                         📄 View JSON Data
                     </a>
                 </div>
@@ -1013,7 +940,6 @@
     </footer>
 
     <script>
-        // Intersection Observer for scroll animations
         const observerOptions = {
             threshold: 0.1,
             rootMargin: '0px 0px -50px 0px'
@@ -1027,12 +953,10 @@
             });
         }, observerOptions);
 
-        // Observe all fade-in elements
         document.querySelectorAll('.fade-in').forEach(el => {
             observer.observe(el);
         });
 
-        // Smooth scrolling for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -1046,7 +970,6 @@
             });
         });
 
-        // Add subtle mouse tracking effect
         document.addEventListener('mousemove', (e) => {
             const orbs = document.querySelectorAll('.floating-orb');
             const x = e.clientX / window.innerWidth;
@@ -1061,7 +984,6 @@
             });
         });
 
-        // Add initial animation delay
         setTimeout(() => {
             document.querySelectorAll('.fade-in').forEach((el, index) => {
                 setTimeout(() => {
