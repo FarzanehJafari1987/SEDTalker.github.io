@@ -486,57 +486,6 @@
             border-radius: 15px;
         }
 
-        .video-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: rgba(0, 0, 0, 0.3);
-            cursor: pointer;
-            transition: all 0.3s ease;
-            z-index: 10;
-        }
-
-        .video-overlay:hover {
-            background: rgba(0, 0, 0, 0.5);
-        }
-
-        .video-overlay.hidden {
-            display: none;
-        }
-
-        .youtube-play-button {
-            width: 80px;
-            height: 56px;
-            background: #FF0000;
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 20px rgba(255, 0, 0, 0.4);
-        }
-
-        .video-overlay:hover .youtube-play-button {
-            background: #CC0000;
-            transform: scale(1.1);
-            box-shadow: 0 6px 30px rgba(255, 0, 0, 0.6);
-        }
-
-        .youtube-play-button::before {
-            content: '';
-            width: 0;
-            height: 0;
-            border-left: 20px solid white;
-            border-top: 12px solid transparent;
-            border-bottom: 12px solid transparent;
-            margin-left: 5px;
-        }
-
         .json-link {
             display: block;
             margin-top: 15px;
@@ -719,9 +668,6 @@
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                         allowfullscreen>
                     </iframe>
-                    <div class="video-overlay" onclick="this.classList.add('hidden')">
-                        <div class="youtube-play-button"></div>
-                    </div>
                 </div>
             </div>
         </div>
