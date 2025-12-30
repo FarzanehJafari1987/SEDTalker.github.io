@@ -449,6 +449,13 @@
             margin-top: 40px;
         }
 
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            margin-top: 40px;
+        }
+
         .emotion-video-card {
             background: rgba(255, 255, 255, 0.05);
             backdrop-filter: blur(10px);
@@ -605,6 +612,10 @@
             .emotion-videos-grid {
                 grid-template-columns: 1fr;
             }
+
+            .comparison-grid {
+                grid-template-columns: 1fr;
+            }
         }
 
         /* Scroll animations */
@@ -654,7 +665,7 @@
 
         <div class="nav-section fade-in">
             <div class="nav-buttons">
-                <a href="#arXiv" class="nav-btn">📄 arXiv (Coming Soon)</a>
+                <a href="#paper" class="nav-btn">📄 arXiv (Coming Soon)</a>
                 <a href="#code" class="nav-btn">💻 Code (Coming Soon)</a>
             </div>
         </div>
@@ -672,10 +683,40 @@
             </div>
         </div>
 
+        <!-- Comparison Section -->
+        <section class="emotion-videos-section fade-in">
+            <h2 class="section-title">Comparison with Competitors</h2>
+            <div class="comparison-grid">
+                <div class="emotion-video-card">
+                    <h3 class="emotion-label">EmoTalk</h3>
+                    <div class="small-video-container">
+                        <iframe 
+                            src="https://drive.google.com/file/d/1ZQbjmu5VerNkHYjWXIcuHhph_89iK_BE/preview" 
+                            title="EmoTalk Demo"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                </div>
+                
+                <div class="emotion-video-card">
+                    <h3 class="emotion-label">SEDTalker (Ours)</h3>
+                    <div class="small-video-container">
+                        <iframe 
+                            src="https://drive.google.com/file/d/1-NEnRzP2n8DNSBz21HQSpZP4fNoWtty1/preview" 
+                            title="SEDTalker Demo"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <section class="emotion-section fade-in">
             <h2 class="section-title">Speech Emotion Diarization</h2>
             <div class="emotion-info">
-                <p><strong>File:</strong> demo/wav/test.wav</p>
+                <p><strong>File:</strong> SED/wav/test.wav</p>
                 <p><strong>Duration:</strong> 21.43 seconds</p>
             </div>
             
@@ -797,7 +838,7 @@
         <section class="abstract-section fade-in">
             <h2 class="section-title">Abstract</h2>
             <p class="abstract-text">
-                We introduce SEDTalker, an emotion-aware framework for speech-driven 3D facial animation that leverages frame-level speech emotion diarization to achieve fine-grained expressive control. Unlike prior approaches that rely on utterance-level or manually specified emotion labels, our method predicts temporally dense emotion categories and intensities directly from speech, enabling continuous modulation of facial expressions over time. The diarized emotion signals are encoded as learned embeddings and used to condition a speech-driven 3D animation model based on a hybrid Transformer-Mamba architecture. This design allows effective disentanglement of linguistic content and emotional style while preserving identity and temporal coherence. We evaluate our approach on a large-scale multi-corpus dataset for speech emotion diarization and on the EmoVOCA dataset for emotional 3D facial animation. Quantitative results demonstrate strong frame-level emotion recognition performance and low geometric and temporal reconstruction errors, while qualitative results show smooth emotion transitions and consistent expression control. These findings highlight the effectiveness of frame-level emotion diarization for expressive and controllable 3D talking head generation.
+                We introduce SEDTalker, an emotion-aware framework for speech-driven 3D facial animation that leverages frame-level speech emotion diarization to achieve fine-grained expressive control. Unlike prior approaches that rely on utterance-level or manually specified emotion labels, our method predicts temporally dense emotion categories and intensities directly from speech, enabling continuous modulation of facial expressions over time. The diarized emotion signals are encoded as learned embeddings and used to condition a speech-driven 3D animation model based on a hybrid Transformer--Mamba architecture. This design allows effective disentanglement of linguistic content and emotional style while preserving identity and temporal coherence. We evaluate our approach on a large-scale multi-corpus dataset for speech emotion diarization and on the EmoVOCA dataset for emotional 3D facial animation. Quantitative results demonstrate strong frame-level emotion recognition performance and low geometric and temporal reconstruction errors, while qualitative results show smooth emotion transitions and consistent expression control. These findings highlight the effectiveness of frame-level emotion diarization for expressive and controllable 3D talking head generation.
             </p>
         </section>
 
@@ -812,9 +853,6 @@
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                             allowfullscreen>
                         </iframe>
-                        <div class="video-overlay" onclick="this.classList.add('hidden')">
-                            <div class="youtube-play-button"></div>
-                        </div>
                     </div>
                     <a href="https://drive.google.com/file/d/1KomijCn_qe-gXQmLuEKDZqTGD2w4Y_oj/view?usp=drive_link" target="_blank" class="json-link">
                         📄 View JSON Data
@@ -829,9 +867,6 @@
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                             allowfullscreen>
                         </iframe>
-                        <div class="video-overlay" onclick="this.classList.add('hidden')">
-                            <div class="youtube-play-button"></div>
-                        </div>
                     </div>
                     <a href="https://drive.google.com/file/d/1eHV18zKmW-vsNXh_5TwcAkxnuEzma7ns/view?usp=drive_link" target="_blank" class="json-link">
                         📄 View JSON Data
@@ -846,9 +881,6 @@
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                             allowfullscreen>
                         </iframe>
-                        <div class="video-overlay" onclick="this.classList.add('hidden')">
-                            <div class="youtube-play-button"></div>
-                        </div>
                     </div>
                     <a href="https://drive.google.com/file/d/1PtJED5DzTcS5fBCRP62b_eYm4-yF1UDM/view?usp=drive_link" target="_blank" class="json-link">
                         📄 View JSON Data
@@ -863,9 +895,6 @@
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                             allowfullscreen>
                         </iframe>
-                        <div class="video-overlay" onclick="this.classList.add('hidden')">
-                            <div class="youtube-play-button"></div>
-                        </div>
                     </div>
                     <a href="https://drive.google.com/file/d/1n2CY57LZeGTYIFJyBZ8sNPCRWvESfAFZ/view?usp=drive_link" target="_blank" class="json-link">
                         📄 View JSON Data
@@ -880,9 +909,6 @@
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                             allowfullscreen>
                         </iframe>
-                        <div class="video-overlay" onclick="this.classList.add('hidden')">
-                            <div class="youtube-play-button"></div>
-                        </div>
                     </div>
                     <a href="https://drive.google.com/file/d/1sBNFrVcPk-Q448VElDIHa9g4NhBstRYQ/view?usp=drive_link" target="_blank" class="json-link">
                         📄 View JSON Data
@@ -897,9 +923,6 @@
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                             allowfullscreen>
                         </iframe>
-                        <div class="video-overlay" onclick="this.classList.add('hidden')">
-                            <div class="youtube-play-button"></div>
-                        </div>
                     </div>
                     <a href="https://drive.google.com/file/d/1RnRzsmhhMjLn_ZD8rQN9d97lbXoIzm9o/view?usp=drive_link" target="_blank" class="json-link">
                         📄 View JSON Data
@@ -914,9 +937,6 @@
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                             allowfullscreen>
                         </iframe>
-                        <div class="video-overlay" onclick="this.classList.add('hidden')">
-                            <div class="youtube-play-button"></div>
-                        </div>
                     </div>
                     <a href="https://drive.google.com/file/d/1GWx6yqOPAdHFSu7lw3A8QdiEBA85Ts2S/view?usp=drive_link" target="_blank" class="json-link">
                         📄 View JSON Data
@@ -931,9 +951,6 @@
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                             allowfullscreen>
                         </iframe>
-                        <div class="video-overlay" onclick="this.classList.add('hidden')">
-                            <div class="youtube-play-button"></div>
-                        </div>
                     </div>
                     <a href="https://drive.google.com/file/d/1puqYVbUHuDNocK5XtE7_mCO2TfwXv9Hz/view?usp=drive_link" target="_blank" class="json-link">
                         📄 View JSON Data
@@ -948,9 +965,6 @@
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                             allowfullscreen>
                         </iframe>
-                        <div class="video-overlay" onclick="this.classList.add('hidden')">
-                            <div class="youtube-play-button"></div>
-                        </div>
                     </div>
                     <a href="https://drive.google.com/file/d/1URvQK2LOvKn1GvxoVq3gs112p1fl_hY6/view?usp=drive_link" target="_blank" class="json-link">
                         📄 View JSON Data
